@@ -6,8 +6,8 @@ import sys
 
 stamp = PdfReader("wtr.pdf").pages[0]
 
-writer = PdfWriter(clone_from=["dummy.pdf"])
+writer = PdfWriter(clone_from="twopage.pdf")
 for page in writer.pages:
-    page.merge_page(stamp, over=False)
+    page.merge_page(stamp, over=True)
 
-writer.write("out-watermark.pdf")
+writer.write("out-stamp-two-page.pdf")
